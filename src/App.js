@@ -8,23 +8,29 @@ import Contact from "./components/Contact";
 import Skills from "./components/Skills";
 
 function App() {
+  function smoothScroll(target) {
+    const element = document.getElementById(target);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }
   return (
     <div>
-      <Header />
-      <section>
-        <Home id="home" />
+      <Header smoothScroll={smoothScroll} />
+      <section id="home">
+        <Home />
       </section>
-      <section>
-        <AboutMe id="aboutme" />
+      <section id="aboutme">
+        <AboutMe />
       </section>
-      <section>
-        <Skills id="skills" />
+      <section id="skills">
+        <Skills />
       </section>
-      <section>
-        <Projects id="projects" />
+      <section id="projects">
+        <Projects />
       </section>
-      <section>
-        <Contact id="contact" />
+      <section id="contact">
+        <Contact />
       </section>
       <Footer />
     </div>
