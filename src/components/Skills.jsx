@@ -1,143 +1,110 @@
 import React from "react";
-class Skills extends React.Component {
-  render() {
-    return (
-      <div>
-        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-          <div
-            id="controls-carousel"
-            class="relative w-full"
-            data-carousel="static"
-          >
-            <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-              <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img
-                  src="/docs/images/carousel/carousel-1.svg"
-                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt="..."
-                />
-              </div>
+import { lenguajes, framewokrs, tools, databases } from "./ImgList";
 
-              <div
-                class="hidden duration-700 ease-in-out"
-                data-carousel-item="active"
-              >
-                <img
-                  src="/docs/images/carousel/carousel-2.svg"
-                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt="..."
-                />
-              </div>
+function Skills() {
+  return (
+    <div className="py-20 bg-gray-dark">
+      <h3 className="top-24 uppercase tracking-[18px] text-2xl text-center">
+        Skills
+      </h3>
 
-              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <h2 className="top-24 uppercase tracking-[18px] text-2xl text-center p-5">
+        Lenguajes
+      </h2>
+      <div className="flex items-center justify-center">
+        <div className="flex flex-row p-5 m-5 h-42 space-x-5 justify-center">
+          {lenguajes.map((lenguaje) => (
+            <div className="sm:w-16 md:w-28 lg:w-32 aspect-w-1 aspect-h-1 rounded hover:animate-rounding hover:rounded-full overflow-hidden shadow-lg hover:shadow-white transition ease-in-out delay-150 hover:-translate-y-5 hover:scale-110 hover:bg-transparent duration-700 group/name">
+              <div className="group/image">
                 <img
-                  src="/docs/images/carousel/carousel-3.svg"
-                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt="..."
+                  src={lenguaje.path}
+                  alt={lenguaje.name}
+                  className="group-hover/image:animate-pulse"
                 />
-              </div>
-
-              <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img
-                  src="/docs/images/carousel/carousel-4.svg"
-                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt="..."
-                />
-              </div>
-
-              <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img
-                  src="/docs/images/carousel/carousel-5.svg"
-                  class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                  alt="..."
-                />
+                <div className="relative flex items-center justify-center group/name -translate-y-21">
+                  <p className="text-white text-sm font-bold bg-black bg-opacity-80 rounded p-2 opacity-0 group-hover/name:opacity-100 transition-opacity duration-300">
+                    {lenguaje.name}
+                  </p>
+                </div>
               </div>
             </div>
-
-            <button
-              type="button"
-              class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-              data-carousel-prev
-            >
-              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg
-                  aria-hidden="true"
-                  class="w-6 h-6 text-white dark:text-gray-800"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 19l-7-7 7-7"
-                  ></path>
-                </svg>
-                <span class="sr-only">Previous</span>
-              </span>
-            </button>
-            <button
-              type="button"
-              class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-              data-carousel-next
-            >
-              <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                <svg
-                  aria-hidden="true"
-                  class="w-6 h-6 text-white dark:text-gray-800"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5l7 7-7 7"
-                  ></path>
-                </svg>
-                <span class="sr-only">Next</span>
-              </span>
-            </button>
-          </div>
-
-          <div class="p-5">
-            <a href="/">
-              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Noteworthy technology acquisitions 2021
-              </h5>
-            </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              Here are the biggest enterprise technology acquisitions of 2021 so
-              far, in reverse chronological order.
-            </p>
-            <a
-              href="/"
-              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Read more
-              <svg
-                aria-hidden="true"
-                class="w-4 h-4 ml-2 -mr-1"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </a>
-          </div>
+          ))}
         </div>
       </div>
-    );
-  }
+
+      <h2 className="top-24 uppercase tracking-[18px] text-2xl text-center p-5">
+        Databases
+      </h2>
+      <div className="flex items-center justify-center">
+        <div className="flex flex-row p-5 m-5 h-42 space-x-5 justify-center">
+          {databases.map((databases) => (
+            <div className="sm:w-16 md:w-28 lg:w-32 aspect-w-1 aspect-h-1 rounded hover:animate-rounding hover:rounded-full overflow-hidden shadow-lg hover:shadow-white transition ease-in-out delay-150 hover:-translate-y-5 hover:scale-110 hover:bg-transparent duration-700 group/name">
+              <div className="group/image">
+                <img
+                  src={databases.path}
+                  alt={databases.name}
+                  className="group-hover/image:animate-pulse"
+                />
+                <div className="relative flex items-center justify-center group/name -translate-y-21">
+                  <p className="text-white text-sm font-bold bg-black bg-opacity-80 rounded p-2 opacity-0 group-hover/name:opacity-100 transition-opacity duration-300">
+                    {databases.name}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <h2 className="top-24 uppercase tracking-[18px] text-2xl text-center p-5">
+        Framewokrs
+      </h2>
+      <div className="flex items-center justify-center">
+        <div className="flex flex-row p-5 m-5 h-42 space-x-5 justify-center">
+          {framewokrs.map((framewokrs) => (
+            <div className="sm:w-16 md:w-28 lg:w-32 aspect-w-1 aspect-h-1 rounded hover:animate-rounding hover:rounded-full overflow-hidden shadow-lg hover:shadow-white transition ease-in-out delay-150 hover:-translate-y-5 hover:scale-110 hover:bg-transparent duration-700 group/name">
+              <div className="group/image">
+                <img
+                  src={framewokrs.path}
+                  alt={framewokrs.name}
+                  className="group-hover/image:animate-pulse"
+                />
+                <div className="relative flex items-center justify-center group/name -translate-y-21">
+                  <p className="text-white text-sm font-bold bg-black bg-opacity-80 rounded p-2 opacity-0 group-hover/name:opacity-100 transition-opacity duration-300">
+                    {framewokrs.name}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <h2 className="top-24 uppercase tracking-[18px] text-2xl text-center p-5">
+        Tools
+      </h2>
+      <div className="flex items-center justify-center">
+        <div className="flex flex-row p-5 m-5 h-42 space-x-5 justify-center">
+          {tools.map((tools) => (
+            <div className="sm:w-16 md:w-28 lg:w-32 aspect-w-1 aspect-h-1 rounded hover:animate-rounding hover:rounded-full overflow-hidden shadow-lg hover:shadow-white transition ease-in-out delay-150 hover:-translate-y-5 hover:scale-110 hover:bg-transparent duration-700 group/name">
+              <div className="group/image">
+                <img
+                  src={tools.path}
+                  alt={tools.name}
+                  className="group-hover/image:animate-pulse"
+                />
+                <div className="relative flex items-center justify-center group/name -translate-y-21">
+                  <p className="text-white text-sm font-bold bg-black bg-opacity-80 rounded p-2 opacity-0 group-hover/name:opacity-100 transition-opacity duration-300">
+                    {tools.name}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Skills;

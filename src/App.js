@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import Skills from "./components/Skills";
 
+
 function App() {
   function smoothScroll(target) {
     const element = document.getElementById(target);
@@ -14,6 +15,11 @@ function App() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   }
+  
+
+  
+
+  
   return (
     <div>
       <Header smoothScroll={smoothScroll} />
